@@ -1,5 +1,47 @@
 ---
 title: "Massachusetts Income"
+execute: 
+  echo: false
+  message: false
 ---
 
+```{r}
+#| message: false
+library(tidycensus)
+library(tidyverse)
+# Load your Census API key
+census_api_key("8a0648bc2604073990a648deb38d0c2e89c5e679")
 
+# Get median household income for Massachusetts census tracts
+income_data <- get_acs(
+  geography = "tract",
+  state = "MA",
+  variables = "B19013_001", # Median household income
+  year = 2022,
+  geometry = TRUE
+)
+```
+
+
+```{r}
+ggplot(income_data) +
+  geom_sf(aes(fill = estimate), color = NA) +
+  scale_fill_viridis_c(
+    option = "plasma",
+    direction = -1,
+    na.value = "gray90",
+    name = "Median Income ($)"
+  ) +
+  labs(
+    title = "Median Household Income by Census Tract",
+    subtitle = "Massachusetts (ACS 2022 5-Year Estimates)",
+    caption = "Source: U.S. Census Bureau via tidycensus"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 12),
+    plot.caption = element_text(size = 9)
+  )
+```
