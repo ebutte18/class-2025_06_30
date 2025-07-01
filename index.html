@@ -139,21 +139,19 @@ ul.task-list li input[type="checkbox"] {
   |                                                                            
   |                                                                      |   0%
   |                                                                            
-  |=                                                                     |   1%
-  |                                                                            
-  |=                                                                     |   2%
+  |==                                                                    |   2%
   |                                                                            
   |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
+  |===                                                                   |   5%
   |                                                                            
   |====                                                                  |   5%
   |                                                                            
   |====                                                                  |   6%
   |                                                                            
-  |======                                                                |   8%
-  |                                                                            
-  |=======                                                               |   9%
-  |                                                                            
-  |=======                                                               |  10%
+  |=====                                                                 |   7%
   |                                                                            
   |========                                                              |  11%
   |                                                                            
@@ -163,11 +161,15 @@ ul.task-list li input[type="checkbox"] {
   |                                                                            
   |=============                                                         |  19%
   |                                                                            
-  |===============                                                       |  22%
+  |==============                                                        |  20%
   |                                                                            
   |================                                                      |  22%
   |                                                                            
-  |=================                                                     |  25%
+  |================                                                      |  23%
+  |                                                                            
+  |=================                                                     |  24%
+  |                                                                            
+  |==================                                                    |  25%
   |                                                                            
   |===================                                                   |  27%
   |                                                                            
@@ -225,8 +227,6 @@ ul.task-list li input[type="checkbox"] {
   |                                                                            
   |====================================================================  |  97%
   |                                                                            
-  |===================================================================== |  99%
-  |                                                                            
   |======================================================================| 100%</code></pre>
 </div>
 </div>
@@ -234,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -315,7 +315,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/ebutte18\.github\.io\/class-2025_06_30\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
