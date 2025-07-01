@@ -7,12 +7,12 @@ execute:
 
 ```{r}
 #| message: false
+```{r, message=FALSE, warning=FALSE}
 library(tidycensus)
 library(tidyverse)
-# Load your Census API key
+
 census_api_key("8a0648bc2604073990a648deb38d0c2e89c5e679")
 
-# Get median household income for Massachusetts census tracts
 income_data <- get_acs(
   geography = "tract",
   state = "MA",
@@ -24,6 +24,7 @@ income_data <- get_acs(
 
 
 ```{r}
+```{r, message=FALSE, warning=FALSE}
 ggplot(income_data) +
   geom_sf(aes(fill = estimate), color = NA) +
   scale_fill_viridis_c(
